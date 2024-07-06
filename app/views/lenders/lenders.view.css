@@ -1,0 +1,24 @@
+.table {
+    margin-top: 20px;
+    border: none; 
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+
+table .thread-white-bg.thead-light th{
+  background: white !important;
+  background-color: white !important;
+  border: none; 
+}
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1; 
+}
+.table .thead-light th {
+  background: white !important;
+  background-color: white !important;
+  border: none;
+}
