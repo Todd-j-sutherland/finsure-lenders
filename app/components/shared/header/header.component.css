@@ -1,0 +1,19 @@
+.header {
+  background: linear-gradient(90deg, #146179, #03A49C);
+  color: white;
+  padding: 10px 20px;
+}
+
+.header .logo-placeholder {
+  height: 50px;
+  width: 50px;
+}
+
+.header .logo-name {
+  color: #e6e6e6;
+  font-size: 18px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+  font-family: 'Roboto';
+}

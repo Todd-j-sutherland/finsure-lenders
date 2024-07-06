@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Infynity - Lenders</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
     <script src="app/app.js"></script>
@@ -11,8 +12,10 @@
     <script src="app/app.routes.js"></script>
     <script src="app/services/lenders.service.js"></script>
     <script src="app/views/lenders/lenders.view.js"></script>
+    <script src="app/components/shared/header/header.component.js"></script>
 </head>
 <body>
+    <header-component></header-component>
     <div class="container" ng-view></div>
 </body>
 </html>
