@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
-    <script src="app/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/app.config.js"></script>
     <script src="app/app.routes.js"></script>
+    <script src="app/app.js"></script>
     <script src="app/services/lenders.service.js"></script>
     <script src="app/views/lenders/lenders.view.js"></script>
     <script src="app/components/shared/header/header.component.js"></script>
+    <script src="app/components/lenders/modal/edit-lender-modal.component.js"></script>
+    <style>
+        .modal-backdrop {
+          opacity: 0 !important;
+        }
+    </style>
 </head>
 <body>
     <header-component></header-component>
     <div class="container" ng-view></div>
 </body>
 </html>
-
-

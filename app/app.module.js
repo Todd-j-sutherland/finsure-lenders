@@ -1,1 +1,1 @@
-angular.module("lendersApp", ["ngRoute"]);
+angular.module("lendersApp", ["ngRoute", "ui.bootstrap"]);

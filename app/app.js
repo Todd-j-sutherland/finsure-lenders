@@ -1,3 +1,1 @@
-angular
-  .module("lendersApp", ["ngRoute"])
-  .controller("LendersController", function () {});
+angular.module("lendersApp").controller("LendersController", function () {});

@@ -1,0 +1,55 @@
+<!-- <link rel="stylesheet" href="app/components/modal/edit-lender-modal.component.css"> -->
+
+<div class="modal modal-content"> 
+    <div class="modal-header">
+        <h3 class="modal-title">Edit Lender</h3>
+        <button type="button" class="close" ng-click="$ctrl.cancel()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form name="$ctrl.editLenderForm">
+            <div class="form-group">
+                <label for="code">Bank Code</label>
+                <input type="text" class="form-control" id="code" name="code" ng-model="$ctrl.lender.attributes.code" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Display Name</label>
+                <input type="text" class="form-control" id="name" name="name" ng-model="$ctrl.lender.attributes.name" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <input type="text" class="form-control" id="type" name="type" ng-model="$ctrl.lender.attributes.type" required>
+            </div>
+            <div class="form-group">
+                <label for="upfront_commission">Upfront Commission</label>
+                <input type="number" class="form-control" id="upfront_commission" name="upfront_commission" ng-model="$ctrl.lender.attributes.upfront_commission" required>
+            </div>
+            <div class="form-group">
+                <label for="high_trail_commission">Trail High</label>
+                <input type="number" class="form-control" id="high_trail_commission" name="high_trail_commission" ng-model="$ctrl.lender.attributes.high_trail_commission" required>
+            </div>
+            <div class="form-group">
+                <label for="low_trail_commission">Trail Low</label>
+                <input type="number" class="form-control" id="low_trail_commission" name="low_trail_commission" ng-model="$ctrl.lender.attributes.low_trail_commission" required>
+            </div>
+            <div class="form-group">
+                <label for="balance_multiplier">Balance Multiplier</label>
+                <input type="number" class="form-control" id="balance_multiplier" name="balance_multiplier" ng-model="$ctrl.lender.attributes.balance_multiplier" required>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="is_active" name="is_active" ng-model="$ctrl.lender.attributes.is_active">
+                <label class="form-check-label" for="is_active">Active</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="is_hidden" name="is_hidden" ng-model="$ctrl.lender.attributes.is_hidden">
+                <label class="form-check-label" for="is_hidden">Hidden</label>
+            </div>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" ng-click="$ctrl.cancel()">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="$ctrl.save()" ng-disabled="editLenderForm.$invalid">Save</button>
+    </div>
+</div> 
