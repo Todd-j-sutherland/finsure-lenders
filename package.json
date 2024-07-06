@@ -1,0 +1,12 @@
+{
+  "name": "lenders-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start --server --files 'app/*.html, app/**/*.js, app/**/*.css, index.html'"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2"
+  }
+}
