@@ -1,1 +1,30 @@
-<div>HELLO WORLD</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Bank Code</th>
+                <th>Display Name</th>
+                <th>Type</th>
+                <th>Upfront Commission</th>
+                <th>Trail High</th>
+                <th>Trail Low</th>
+                <th>Balance Multiplier</th>
+                <th>Active</th>
+                <th>Hide</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="lender in lenders">
+                <td>{{ lender.attributes.code }}</td>
+                <td>{{ lender.attributes.name }}</td>
+                <td>{{ lender.attributes.type }}</td>
+                <td>{{ lender.attributes.upfont_commission }}</td>
+                <td>{{ lender.attributes.high_trail_commission }}</td>
+                <td>{{ lender.attributes.low_trail_commission }}</td>
+                <td>{{ lender.attributes.balance_multiplier }}</td>
+                <td>{{ lender.attributes.is_active }}</td>
+                <td>{{ lender.attributes.is_hidden }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
