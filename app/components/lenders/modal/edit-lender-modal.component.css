@@ -1,12 +1,26 @@
-/* .modal.fade.in {
-    opacity: 1;
-  }
-  .fade:not(.show) {
-    opacity: 1 !important;
-}
-  .modal.fade.in .modal-dialog {
-    transform: translate(0, 0);
-  } */
+
    .modal-backdrop {
     opacity: 0 !important;
   } 
+
+
+  .edit-lender-modal .btn-primary{
+    color: #ffffff;
+    background-color: #00c4ba;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .edit-lender-modal .btn-primary:hover {
+    background-color: #2298ac;
+    border: 1px solid #dee2e6;
+    color: #fff;
+  }
+  .edit-lender-modal .btn-secondary:hover {
+    background-color: #2298ac;
+    border: 1px solid #dee2e6;
+    color: #fff;
+  }
+  
+  
