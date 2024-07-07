@@ -9,19 +9,30 @@ angular.module("lendersApp").controller("LendersViewController", [
     vm.currentPage = 1;
     vm.itemsPerPage = 20;
     vm.loading = true;
+    vm.errorLoading = false;
+    vm.errorLoadingMessage = "";
+
+    vm.$onInit = function () {
+      vm.fetchLenders();
+    };
 
     vm.fetchLenders = function () {
+      console.count("fetchLenders called");
+      vm.loading = true;
+      vm.errorLoading = false;
       lendersService
         .fetchLenders()
-        .then(function (response) {
-          vm.lenders = response.data;
+        .then(function (data) {
+          console.count("then called");
+          vm.lenders = data;
           vm.totalItems = vm.lenders.length;
           vm.pageChange();
+          vm.loading = false;
         })
         .catch(function (error) {
           console.error("Could not fetch lenders", error);
-        })
-        .finally(function () {
+          vm.errorLoadingMessage = "Failed to load lenders. Please try again.";
+          vm.errorLoading = true;
           vm.loading = false;
         });
     };
@@ -29,7 +40,10 @@ angular.module("lendersApp").controller("LendersViewController", [
     vm.pageChange = function () {
       var start = (vm.currentPage - 1) * vm.itemsPerPage;
       var end = start + vm.itemsPerPage;
-      vm.displayedLenderItems = vm.lenders.slice(start, end);
+      console.log(vm.lenders);
+      if (vm.lenders.data) {
+        vm.displayedLenderItems = vm.lenders.data.slice(start, end);
+      }
     };
 
     vm.openEditModal = function (lender) {
@@ -50,7 +64,7 @@ angular.module("lendersApp").controller("LendersViewController", [
           var index = vm.lenders.indexOf(lender);
           if (index !== -1) {
             vm.lenders[index] = editedLender;
-            vm.displayedLenderItems[index] = editedLender;
+            vm.pageChange();
             console.log(editedLender);
           }
         })
@@ -59,7 +73,11 @@ angular.module("lendersApp").controller("LendersViewController", [
         });
     };
 
-    vm.fetchLenders();
+    vm.retryFetch = function () {
+      vm.errorLoading = false;
+      vm.loading = true;
+      vm.fetchLenders();
+    };
 
     $scope.vm = vm;
 

@@ -2,13 +2,18 @@
 
 <div ng-controller="LendersViewController as vm">
     <div ng-show="vm.loading" class="text-center mt-5">
-        <div class="spinner-border text-primary" role="status">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <div ng-show="vm.errorLoading" class="text-center mt-5">
+        <div class="alert alert-danger" role="alert">
+            {{ vm.errorLoadingMessage }}
         </div>
+        <button class="btn btn-primary" ng-click="vm.retryFetch()">Try Again</button>
     </div>
     <div ng-hide="vm.loading">
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
-                <thead class="thead-light thead-white-bg">
+                <thead class="thead-light thead-white-bg table-sticky-top">
                     <tr>
                         <th class="text-center">Bank Code</th>
                         <th class="text-center">Display Name</th>
