@@ -11,6 +11,7 @@ angular.module("lendersApp").controller("LendersViewController", [
     vm.loading = true;
     vm.errorLoading = false;
     vm.errorLoadingMessage = "";
+    vm.totalItems = 0;
 
     vm.$onInit = function () {
       vm.fetchLenders();
@@ -25,7 +26,7 @@ angular.module("lendersApp").controller("LendersViewController", [
         .then(function (data) {
           console.count("then called");
           vm.lenders = data;
-          vm.totalItems = vm.lenders.length;
+          vm.totalItems = vm.lenders.data.length;
           vm.pageChange();
           vm.loading = false;
         })
@@ -61,9 +62,10 @@ angular.module("lendersApp").controller("LendersViewController", [
 
       modalInstance.result
         .then(function (editedLender) {
-          var index = vm.lenders.indexOf(lender);
+          var index = vm.lenders.data.indexOf(lender);
           if (index !== -1) {
-            vm.lenders[index] = editedLender;
+            vm.lenders.data[index] = editedLender;
+            vm.displayedLenderItems[index] = editedLender;
             vm.pageChange();
             console.log(editedLender);
           }
@@ -77,6 +79,10 @@ angular.module("lendersApp").controller("LendersViewController", [
       vm.errorLoading = false;
       vm.loading = true;
       vm.fetchLenders();
+    };
+
+    vm.conditionalDecimalPlaces = function (value) {
+      return value === 0 ? 0 : 2;
     };
 
     $scope.vm = vm;

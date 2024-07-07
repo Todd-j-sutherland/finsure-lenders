@@ -6,24 +6,104 @@
   .table th, .table td {
     vertical-align: middle;
   }
+  .table td, .table th {
+    vertical-align: middle;
+    height: 50px;  
+}
 
+ 
+.table td, .table th {
+    vertical-align: middle;
+    min-height: 50px;
+}
+.table-responsive{
+  padding-left: 40px;
+  padding-right: 40px;
+  background: white; 
+  border-radius: 0 0 4px 4px;
+}
+
+.page-container {
+  filter:drop-shadow(0px 0px 2px #d6d1d1);
+}
+
+.lender-heading-text {
+  color: #20B394;
+  background-color: white;
+  border-radius: 4px 4px 0 0;
+  padding: 15px 0 15px 30px;
+  font-size: 24px;
+  border-bottom: 1px solid #dee2e6;
+  
+}
 table .thread-white-bg.thead-light th{
   background: white !important;
   background-color: white !important;
   border: none; 
+
 }
 thead th {
   position: sticky;
   top: 0;
   z-index: 1; 
+  font-size: 16px;
 }
 .table .thead-light th {
   background: white !important;
   background-color: white !important;
   border: none;
+  color:#6B6B6B !important;
+}
+.table-responsive {
+  height: 80vh;
+  overflow-y: auto;
+  background: white;
 }
 
+.table-responsive td {
+  font-size: 16px;
+  padding: 0px;
+  border-right: none;
+  border-left: none;
+  color:#6B6B6B
+}
+/* F2F3F3 */
+/* FFFFFF */
+.table-responsive tr:first-child {
+  background-color: #F2F3F3;
+}
 
+.table-responsive tr:nth-child(2n) {
+  background-color: #F2F3F3;
+}
+.table-responsive tr:nth-child(2n) {
+  background-color: #FFFFFF;
+}
+
+/* .table-responsive tr:last-child {
+  background-color: #FFFFFF;
+} */
+
+.table-responsive td:first-child {
+  
+}
+
+.table-responsive td:last-child {
+  
+}
+
+.table-responsive tr td:first-child  {
+  font-weight: 600;
+}
+
+/* .table-responsive tr:last-child td {
+  border-bottom: none;
+} */
+.table-sticky-top  {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 .pagination-table {
   display: flex;
   justify-content: center;
@@ -51,4 +131,23 @@ thead th {
   background-color: #007bff;
   color: #fff;
   border-color: #007bff;
+}
+.edit-icon {
+  display: flex;
+  gap: 6px;
+}
+.edit-icon svg{
+  color:#6B6B6B;
+  fill: #6B6B6B;
+  stroke: #6B6B6B;
+  width:12px;
+}
+
+/* 1700  */
+/* 1639 */
+
+.table-sticky-top th:nth-child(4),
+.table-sticky-top th:nth-child(5),
+.table-sticky-top th:nth-child(6) {
+    z-index: 2;  
 }
