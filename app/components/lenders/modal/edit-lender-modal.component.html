@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="app/components/lenders/modal/edit-lender-modal.component.css">
+
 <div class="modal modal-content edit-lender-modal"> 
     <div class="modal-header">
         <h3 class="modal-title">Edit Lender</h3>
@@ -11,52 +12,51 @@
             <div class="form-group">
                 <label for="code">Bank Code</label>
                 <input type="text" class="form-control" id="code" name="code" ng-model="$ctrl.lender.attributes.code" required>
-                <div ng-messages="$ctrl.editLenderForm.code.$error" ng-if="$ctrl.editLenderForm.code.$touched || $ctrl.editLenderForm.$submitted">
-                    <small class="text-danger" ng-message="required">Bank Code is required.</small>
-                </div>
+                <small class="text-danger" ng-if="$ctrl.editLenderForm.code.$error.required && ($ctrl.editLenderForm.code.$touched || $ctrl.editLenderForm.$submitted)">
+                    Bank Code is required.
+                </small>
             </div>
             <div class="form-group">
                 <label for="name">Display Name</label>
                 <input type="text" class="form-control" id="name" name="name" ng-model="$ctrl.lender.attributes.name" required>
-                <div ng-messages="$ctrl.editLenderForm.name.$error" ng-if="$ctrl.editLenderForm.name.$touched || $ctrl.editLenderForm.$submitted">
-                    <small class="text-danger" ng-message="required">Display Name is required.</small>
-                </div>
-                </div>
+                <small class="text-danger" ng-if="$ctrl.editLenderForm.name.$error.required && ($ctrl.editLenderForm.name.$touched || $ctrl.editLenderForm.$submitted)">
+                    Display Name is required.
+                </small>
+            </div>
             <div class="form-group">
                 <label for="type">Type</label>
                 <input type="text" class="form-control" id="type" name="type" ng-model="$ctrl.lender.attributes.type" required>
-                <div ng-messages="$ctrl.editLenderForm.type.$error" ng-if="$ctrl.editLenderForm.type.$touched || $ctrl.editLenderForm.$submitted">
-                    <small class="text-danger" ng-message="required">Type is required.</small>
-                </div>
+                <small class="text-danger" ng-if="$ctrl.editLenderForm.type.$error.required && ($ctrl.editLenderForm.type.$touched || $ctrl.editLenderForm.$submitted)">
+                    Type is required.
+                </small>
             </div>
             <div class="form-group">
                 <label for="upfront_commission">Upfront Commission</label>
                 <input type="number" class="form-control" id="upfront_commission" name="upfront_commission" ng-model="$ctrl.lender.attributes.upfront_commission" required>
-                <div ng-messages="$ctrl.editLenderForm.upfront_commission.$error" ng-if="$ctrl.editLenderForm.upfront_commission.$touched || $ctrl.editLenderForm.$submitted">
-                    <small class="text-danger" ng-message="required">Upfront Commission is required.</small>
-                </div>
+                <small class="text-danger" ng-if="$ctrl.editLenderForm.upfront_commission.$error.required && ($ctrl.editLenderForm.upfront_commission.$touched || $ctrl.editLenderForm.$submitted)">
+                    Upfront Commission is required.
+                </small>
             </div>
             <div class="form-group">
                 <label for="high_trail_commission">Trail High</label>
                 <input type="number" class="form-control" id="high_trail_commission" name="high_trail_commission" ng-model="$ctrl.lender.attributes.high_trail_commission" required>
-                <div ng-messages="$ctrl.editLenderForm.high_trail_commission.$error" ng-if="$ctrl.editLenderForm.high_trail_commission.$touched || $ctrl.editLenderForm.$submitted">
-                    <small class="text-danger" ng-message="required">Trail High is required.</small>
-                </div>
+                <small class="text-danger" ng-if="$ctrl.editLenderForm.high_trail_commission.$error.required && ($ctrl.editLenderForm.high_trail_commission.$touched || $ctrl.editLenderForm.$submitted)">
+                    Trail High is required.
+                </small>
             </div>
             <div class="form-group">
                 <label for="low_trail_commission">Trail Low</label>
                 <input type="number" class="form-control" id="low_trail_commission" name="low_trail_commission" ng-model="$ctrl.lender.attributes.low_trail_commission" required>
-                <div ng-messages="$ctrl.editLenderForm.low_trail_commission.$error" ng-if="$ctrl.editLenderForm.low_trail_commission.$touched || $ctrl.editLenderForm.$submitted">
-                    <small class="text-danger" ng-message="required">Trail Low is required.</small>
-                </div>
+                <small class="text-danger" ng-if="$ctrl.editLenderForm.low_trail_commission.$error.required && ($ctrl.editLenderForm.low_trail_commission.$touched || $ctrl.editLenderForm.$submitted)">
+                    Trail Low is required.
+                </small>
             </div>
             <div class="form-group">
                 <label for="balance_multiplier">Balance Multiplier</label>
                 <input type="number" class="form-control" id="balance_multiplier" name="balance_multiplier" ng-model="$ctrl.lender.attributes.balance_multiplier" required>
-                <div ng-messages="$ctrl.editLenderForm.balance_multiplier.$error" ng-if="$ctrl.editLenderForm.balance_multiplier.$touched || $ctrl.editLenderForm.$submitted">
-                    <small class="text-danger" ng-message="required">Balance Multiplier is required.</small>
-                </div>
-                
+                <small class="text-danger" ng-if="$ctrl.editLenderForm.balance_multiplier.$error.required && ($ctrl.editLenderForm.balance_multiplier.$touched || $ctrl.editLenderForm.$submitted)">
+                    Balance Multiplier is required.
+                </small>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="is_active" name="is_active" ng-model="$ctrl.lender.attributes.is_active">
@@ -66,7 +66,6 @@
                 <input type="checkbox" class="form-check-input" id="is_hidden" name="is_hidden" ng-model="$ctrl.lender.attributes.is_hidden">
                 <label class="form-check-label" for="is_hidden">Hidden</label>
             </div>
-
         </form>
     </div>
     <div class="modal-footer">

@@ -15,12 +15,6 @@ angular.module("lendersApp").component("editLenderModal", {
     $ctrl.save = function () {
       if ($ctrl.editLenderForm.$valid) {
         $ctrl.close({ $value: $ctrl.lender });
-      } else {
-        angular.forEach($ctrl.editLenderForm.$error, function (field) {
-          angular.forEach(field, function (errorField) {
-            errorField.$setTouched();
-          });
-        });
       }
     };
 

@@ -18,13 +18,11 @@ angular.module("lendersApp").controller("LendersViewController", [
     };
 
     vm.fetchLenders = function () {
-      console.count("fetchLenders called");
       vm.loading = true;
       vm.errorLoading = false;
       lendersService
         .fetchLenders()
         .then(function (data) {
-          console.count("then called");
           vm.lenders = data;
           vm.totalItems = vm.lenders.data.length;
           vm.pageChange();
@@ -41,7 +39,6 @@ angular.module("lendersApp").controller("LendersViewController", [
     vm.pageChange = function () {
       var start = (vm.currentPage - 1) * vm.itemsPerPage;
       var end = start + vm.itemsPerPage;
-      console.log(vm.lenders);
       if (vm.lenders.data) {
         vm.displayedLenderItems = vm.lenders.data.slice(start, end);
       }
@@ -60,19 +57,14 @@ angular.module("lendersApp").controller("LendersViewController", [
         },
       });
 
-      modalInstance.result
-        .then(function (editedLender) {
-          var index = vm.lenders.data.indexOf(lender);
-          if (index !== -1) {
-            vm.lenders.data[index] = editedLender;
-            vm.displayedLenderItems[index] = editedLender;
-            vm.pageChange();
-            console.log(editedLender);
-          }
-        })
-        .catch(function (error) {
-          console.log("Modal dismissed at: " + new Date(), error);
-        });
+      modalInstance.result.then(function (editedLender) {
+        var index = vm.lenders.data.indexOf(lender);
+        if (index !== -1) {
+          vm.lenders.data[index] = editedLender;
+          vm.displayedLenderItems[index] = editedLender;
+          vm.pageChange();
+        }
+      });
     };
 
     vm.retryFetch = function () {
