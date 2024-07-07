@@ -1,26 +1,31 @@
-
-   .modal-backdrop {
+.modal-backdrop {
     opacity: 0 !important;
-  } 
+}
 
+.edit-lender-modal .modal-body {
+    color: #6B6B6B;
+}
 
-  .edit-lender-modal .btn-primary{
+.edit-lender-modal .modal-title {
+    color: #6B6B6B;
+}
+
+.edit-lender-modal .btn-primary {
     color: #ffffff;
     background-color: #00c4ba;
     border: 1px solid #dee2e6;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .edit-lender-modal .btn-primary:hover {
+}
+
+.edit-lender-modal .btn-primary:hover {
     background-color: #2298ac;
     border: 1px solid #dee2e6;
     color: #fff;
-  }
-  .edit-lender-modal .btn-secondary:hover {
+}
+
+.edit-lender-modal .btn-secondary:hover {
     background-color: #2298ac;
     border: 1px solid #dee2e6;
     color: #fff;
-  }
-  
-  
+}
