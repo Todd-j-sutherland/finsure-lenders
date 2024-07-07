@@ -24,3 +24,4 @@ Improvements that could be made to this exercise are:
 - add a build process to minify and bundle the files
 - as well to use SCSS instead of basic CSS
 - mock the API endpoints instead of using JSON file
+- UI/UX improvements such as better modal positioning and different screen sizes
